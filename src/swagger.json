@@ -1,0 +1,184 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "RentX Documentation",
+    "description": "This is API Rent",
+    "contact": {
+      "name": "API Support",
+      "email": "rafael.albano88@gmail.com"
+    },
+    "version": "1.0.0"
+  }, 
+  "paths": {
+    "/v1/categories": {
+      "post": {
+        "tags": ["Categories"],
+        "summary": "Create a Category",
+        "description": "create a new category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "Category name sample",
+                  "description": "Category description sample"
+                }
+              }              
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Category already exists"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Categories"],
+        "summary": "List Categories",
+        "description": "List all categories",
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      }
+                    },
+                    "example": {
+                      "name": "Category name sample",
+                      "description": "Category description sample"
+                    }   
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      
+    },
+
+    "/v1/categories/import": {  
+      "post": {
+        "tags": ["Categories"],
+        "summary": "Upload a new Category",
+        "description": "upload a new category",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+
+    "/v1/specifications": {
+      "post": {
+        "tags": ["Specifications"],
+        "summary": "Create a Specifications",
+        "description": "Create a new specification",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Specification"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      },
+
+      "get": {
+        "tags": ["Specifications"],
+        "summary": "List Specifications",
+        "description": "List all specification",
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      }
+                    },
+                    "example": {
+                      "name": "Specification name sample",
+                      "description": "Specification description sample"
+                    }   
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    } 
+  },
+  "definitions": {
+    "Specification": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "name": "Specification name sample",
+        "description": "Specification description sample"
+      }
+    }
+  }
+    
+}
