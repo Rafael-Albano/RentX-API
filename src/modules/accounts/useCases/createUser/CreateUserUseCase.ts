@@ -25,11 +25,11 @@ export class CreateUserUseCase {
         driver_license,
         avatar,
     }: RequestDTO): Promise<void> {
-        const passwordEncript = await hash(password, 10);
-
         if (await this.userRepositories.findByEmail(email)) {
             throw new Error("User Already Exists !");
         }
+
+        const passwordEncript = await hash(password, 10);
 
         await this.userRepositories.create({
             name,

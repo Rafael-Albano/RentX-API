@@ -10,7 +10,7 @@ export class CreateCategoryController {
         try {
             await createCategoryUseCase.execute({ name, description });
         } catch (err) {
-            return response.status(500).json(`${err.message}`);
+            return response.status(400).json(`${err.message}`);
         }
 
         return response.status(201).send();

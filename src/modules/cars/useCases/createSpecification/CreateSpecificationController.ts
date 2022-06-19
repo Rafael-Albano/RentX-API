@@ -12,7 +12,7 @@ export class CreateSpecificationController {
         try {
             await createSpecificationUseCase.execute({ description, name });
         } catch (err) {
-            return response.status(500).json(`${err.message}`);
+            return response.status(400).json(`${err.message}`);
         }
 
         return response.status(201).send();

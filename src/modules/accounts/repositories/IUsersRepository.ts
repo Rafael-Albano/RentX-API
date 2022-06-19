@@ -5,7 +5,8 @@ interface ICreateUserDTO {
     password: string;
     email: string;
     driver_license: string;
-    avatar: string;
+    id?: string;
+    avatar?: string;
 }
 
 interface IUsersRepository {
@@ -15,10 +16,11 @@ interface IUsersRepository {
         email,
         driver_license,
         avatar,
+        id,
     }: ICreateUserDTO): Promise<void>;
 
     findByEmail(email: string): Promise<User>;
-    // findById(id: string): Promise<User>;
+    findById(id: string): Promise<User>;
 }
 
 export { IUsersRepository, ICreateUserDTO };
