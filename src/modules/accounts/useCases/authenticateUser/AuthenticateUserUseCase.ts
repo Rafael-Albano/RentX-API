@@ -2,8 +2,8 @@ import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
 
-import { AuthenticateErrors } from "../../../../errors/AuthenticateErrors";
-import { IUsersRepository } from "../../repositories/IUsersRepository";
+import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
+import { AuthenticateErrors } from "@shared/errors/AuthenticateErrors";
 
 type RequestDTO = {
     email: string;

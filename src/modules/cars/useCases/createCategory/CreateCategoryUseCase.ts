@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
-import { CategoryErrors } from "../../../../errors/CategoryErrors";
-import { ICategoryRepository } from "../../repositories/ICategoryRepository";
+import { ICategoryRepository } from "@modules/cars/repositories/ICategoryRepository";
+import { CategoryErrors } from "@shared/errors/CategoryErrors";
 
 type RequestDTO = {
     name: string;

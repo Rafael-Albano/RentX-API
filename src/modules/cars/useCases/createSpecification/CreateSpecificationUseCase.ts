@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
-import { SpecificationErrors } from "../../../../errors/SpecificationErrors";
-import { ISpecificationRepository } from "../../repositories/ISpecificationRepository";
+import { ISpecificationRepository } from "@modules/cars/repositories/ISpecificationRepository";
+import { SpecificationErrors } from "@shared/errors/SpecificationErrors";
 
 type RequestDTO = {
     name: string;
