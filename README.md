@@ -14,8 +14,8 @@
 # Listagem de Carro
 
 **RF**
-- Deve ser possível listar todos os carros disponíveis.
-- Deve ser possível listar todos os carros disponíveis pelo nome da categoria.
+- Deve ser possível listar todos os carros disponíveis.()
+- Deve ser possível listar todos os carros disponíveis pelo nome da categoria(category_id).
 - Deve ser possível listar todos os carros disponíveis pelo nome da marca.
 - Deve ser possível listar todos os carros disponíveis pelo namo do carro.
 

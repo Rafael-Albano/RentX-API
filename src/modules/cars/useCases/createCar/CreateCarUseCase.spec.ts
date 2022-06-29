@@ -10,6 +10,7 @@ const carTest = {
     license_plate: "ABC-1234",
     fine_amount: 350.0,
     brand: "brandCar",
+    category_id: "123456",
 };
 let createCarUseCase: CreateCarUseCase;
 let carRepositoriesInMemory: CarRepositoriesInMemory;

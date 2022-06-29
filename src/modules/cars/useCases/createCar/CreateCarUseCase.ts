@@ -20,12 +20,11 @@ export class CreateCarUseCase {
         private carRepositories: ICarRepository
     ) {}
     async execute(car: CarDTO): Promise<void> {
-        console.log(car);
         const carAlreadyExists = await this.carRepositories.findByLicensePlate(
             car.license_plate
         );
 
-        console.log(carAlreadyExists);
+        console.log(car);
 
         if (carAlreadyExists) {
             throw new CarErrors("Car already exists !");
