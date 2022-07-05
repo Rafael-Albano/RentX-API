@@ -30,8 +30,8 @@
 
 **RN**
 - Não deve ser possível cadastrar uma especificação para um carro não cadastrado.(OK)
-- Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
-- O usuário responsável pelo cadastro deve ser o administrador.
+- Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.(OK)
+- O usuário responsável pelo cadastro deve ser o administrador.(OK)
 
 # Cadastro de Imagem
 

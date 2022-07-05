@@ -61,6 +61,11 @@ describe("Create Car Specification", () => {
             specification_id,
         });
 
-        console.log(car);
+        const specificationsCars = await carRepositoriesInMemory.findById(
+            car.id
+        );
+
+        expect(specificationsCars).toHaveProperty("specifications");
+        expect(specificationsCars.specifications.length).toBe(1);
     });
 });

@@ -6,12 +6,12 @@ import { CarErrors } from "@shared/errors/CarErros";
 
 import { SpecificationCarDTO } from "./dto/SpecificationCarDTO";
 
-// @injectable()
+@injectable()
 export class CreateSpecificationCarUseCase {
     constructor(
-        // @inject("CarRepositories")
+        @inject("CarRepositories")
         private carRepositories: ICarRepository,
-        // @inject("SpecificationRepositories")
+        @inject("SpecificationRepositories")
         private specificationRepositories: ISpecificationRepository
     ) {}
     async execute({
@@ -31,7 +31,5 @@ export class CreateSpecificationCarUseCase {
         carExists.specifications = specifications;
 
         await this.carRepositories.create(carExists);
-
-        console.log(carExists);
     }
 }
