@@ -1,37 +1,43 @@
-import { getRepository, Repository } from "typeorm";
-
 import { Specification } from "@modules/cars/infra/typeorm/entities/Specification";
 import {
     ICreateSpecificationDTO,
     ISpecificationRepository,
 } from "@modules/cars/repositories/ISpecificationRepository";
 
-export class SpecificationRepositories implements ISpecificationRepository {
-    private respository: Repository<Specification>;
+export class SpecificationRepositoriesInMemory
+    implements ISpecificationRepository
+{
+    private specifications: Specification[];
+
     constructor() {
-        this.respository = getRepository(Specification);
+        this.specifications = [];
     }
 
     async findByname(name: string): Promise<Specification> {
-        const specification = await this.respository.findOne({ name });
-        return specification;
+        return this.specifications.find(
+            (specification) => specification.name === name
+        );
     }
+
     async create({
         name,
         description,
     }: ICreateSpecificationDTO): Promise<void> {
-        const specification = this.respository.create({
+        const specification = new Specification();
+        Object.assign(specification, {
             name,
             description,
         });
-        await this.respository.save(specification);
+        this.specifications.push(specification);
     }
     async list(): Promise<Specification[]> {
-        const specifications = await this.respository.find();
-        return specifications;
+        return this.specifications;
     }
     async findByIds(ids: string[]): Promise<Specification[]> {
-        const specifications = await this.respository.findByIds(ids);
+        const specifications = this.specifications.filter((specification) =>
+            ids.includes(specification.id)
+        );
+
         return specifications;
     }
 }

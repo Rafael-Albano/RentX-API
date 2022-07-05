@@ -1,4 +1,5 @@
 import { Car } from "../infra/typeorm/entities/Cars";
+import { Specification } from "../infra/typeorm/entities/Specification";
 
 export interface ICarDTO {
     name: string;
@@ -8,6 +9,7 @@ export interface ICarDTO {
     fine_amount: number;
     brand: string;
     category_id: string;
+    specifications?: Specification[];
 }
 
 export interface ICarRepository {
@@ -18,4 +20,5 @@ export interface ICarRepository {
         category_id?: string,
         name?: string
     ): Promise<Car[]>;
+    findById(id: string): Promise<Car>;
 }

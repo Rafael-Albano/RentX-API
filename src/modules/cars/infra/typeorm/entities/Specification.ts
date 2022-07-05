@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from "uuid";
 @Entity("specifications")
 export class Specification {
     @PrimaryColumn()
-    private id: string;
+    id: string;
 
     @Column()
     name: string;

@@ -24,8 +24,6 @@ export class CreateCarUseCase {
             car.license_plate
         );
 
-        console.log(car);
-
         if (carAlreadyExists) {
             throw new CarErrors("Car already exists !");
         }

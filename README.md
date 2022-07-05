@@ -14,24 +14,22 @@
 # Listagem de Carro
 
 **RF**
-- Deve ser possível listar todos os carros disponíveis.()
-- Deve ser possível listar todos os carros disponíveis pelo nome da categoria(category_id).
-- Deve ser possível listar todos os carros disponíveis pelo nome da marca.
-- Deve ser possível listar todos os carros disponíveis pelo namo do carro.
+- Deve ser possível listar todos os carros disponíveis.(OK)
+- Deve ser possível listar todos os carros disponíveis pelo nome da categoria(category_id).(OK)
+- Deve ser possível listar todos os carros disponíveis pelo nome da marca.(OK)
+- Deve ser possível listar todos os carros disponíveis pelo namo do carro.(OK)
 
 **RN**
-- O usuário não precisa estar logado no sistema.
+- O usuário não precisa estar logado no sistema.(OK)
 
 
 # Cadastro de Especificação
 
 **RF**
 - Deve ser possível cadastrar uma especificação para um carro.
-- Deve ser possível listar todas as especificações.
-- Deve ser possível listar todos os carros.
 
 **RN**
-- Não deve ser possível cadastrar uma especificação para um carro não cadstrado.
+- Não deve ser possível cadastrar uma especificação para um carro não cadastrado.(OK)
 - Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
 - O usuário responsável pelo cadastro deve ser o administrador.
 
