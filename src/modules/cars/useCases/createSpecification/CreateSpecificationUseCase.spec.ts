@@ -26,7 +26,7 @@ describe("Create Specication", () => {
         await createSpecificationUseCase.execute({ name, description });
 
         const specification =
-            await specificationRepositoriesInMemory.findByname(name);
+            await specificationRepositoriesInMemory.findByName(name);
         expect(specification).toHaveProperty("id");
     });
 

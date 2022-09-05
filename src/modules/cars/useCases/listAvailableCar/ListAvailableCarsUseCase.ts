@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
 import { Car } from "@modules/cars/infra/typeorm/entities/Cars";
-import { ICarRepository } from "@modules/cars/repositories/ICarRepositories";
+import { ICarRepository } from "@modules/cars/repositories/ICarRepository";
 
 type RequestDTO = {
     category_id?: string;

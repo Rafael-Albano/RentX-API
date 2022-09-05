@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
-import { CarErrors } from "../../../../shared/errors/CarErros";
-import { ICarRepository } from "../../repositories/ICarRepositories";
+import { CarErrors } from "../../../../shared/errors/CarErrors";
+import { ICarRepository } from "../../repositories/ICarRepository";
 
 type CarDTO = {
     name: string;

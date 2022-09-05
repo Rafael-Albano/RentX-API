@@ -7,31 +7,31 @@ import {
 } from "@modules/cars/repositories/ISpecificationRepository";
 
 export class SpecificationRepositories implements ISpecificationRepository {
-    private respository: Repository<Specification>;
+    private repository: Repository<Specification>;
     constructor() {
-        this.respository = getRepository(Specification);
+        this.repository = getRepository(Specification);
     }
 
-    async findByname(name: string): Promise<Specification> {
-        const specification = await this.respository.findOne({ name });
+    async findByName(name: string): Promise<Specification> {
+        const specification = await this.repository.findOne({ name });
         return specification;
     }
     async create({
         name,
         description,
     }: ICreateSpecificationDTO): Promise<void> {
-        const specification = this.respository.create({
+        const specification = this.repository.create({
             name,
             description,
         });
-        await this.respository.save(specification);
+        await this.repository.save(specification);
     }
     async list(): Promise<Specification[]> {
-        const specifications = await this.respository.find();
+        const specifications = await this.repository.find();
         return specifications;
     }
     async findByIds(ids: string[]): Promise<Specification[]> {
-        const specifications = await this.respository.findByIds(ids);
+        const specifications = await this.repository.findByIds(ids);
         return specifications;
     }
 }

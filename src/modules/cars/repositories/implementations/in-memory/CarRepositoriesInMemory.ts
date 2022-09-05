@@ -1,6 +1,6 @@
 import { Car } from "@modules/cars/infra/typeorm/entities/Cars";
 
-import { ICarDTO, ICarRepository } from "../../ICarRepositories";
+import { ICarDTO, ICarRepository } from "../../ICarRepository";
 
 export class CarRepositoriesInMemory implements ICarRepository {
     private cars: Array<Car>;

@@ -1,8 +1,8 @@
 import { inject, injectable } from "tsyringe";
 
-import { ICarRepository } from "@modules/cars/repositories/ICarRepositories";
+import { ICarRepository } from "@modules/cars/repositories/ICarRepository";
 import { ISpecificationRepository } from "@modules/cars/repositories/ISpecificationRepository";
-import { CarErrors } from "@shared/errors/CarErros";
+import { CarErrors } from "@shared/errors/CarErrors";
 
 import { SpecificationCarDTO } from "./dto/SpecificationCarDTO";
 

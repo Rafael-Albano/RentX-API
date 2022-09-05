@@ -1,6 +1,6 @@
 import { CarRepositoriesInMemory } from "@modules/cars/repositories/implementations/in-memory/CarRepositoriesInMemory";
 import { SpecificationRepositoriesInMemory } from "@modules/cars/repositories/implementations/in-memory/SpecificationRepositoriesInMemory";
-import { CarErrors } from "@shared/errors/CarErros";
+import { CarErrors } from "@shared/errors/CarErrors";
 
 import { CreateSpecificationCarUseCase } from "./CreateSpecificationCarUseCase";
 
@@ -51,7 +51,7 @@ describe("Create Car Specification", () => {
             name: "Specification name",
         });
 
-        const specification = await specificationRepositoryInMemory.findByname(
+        const specification = await specificationRepositoryInMemory.findByName(
             "Specification name"
         );
         const specification_id = [specification.id];

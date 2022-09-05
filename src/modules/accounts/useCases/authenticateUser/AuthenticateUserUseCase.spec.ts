@@ -44,11 +44,11 @@ describe("Authenticate User", () => {
         }).rejects.toBeInstanceOf(AuthenticateErrors);
     });
 
-    it("Should not be able to authenticate an user with passworld incorrect", async () => {
+    it("Should not be able to authenticate an user with password incorrect", async () => {
         expect(async () => {
             await authenticateUserUseCase.execute({
                 email: loginTest.email,
-                password: "passworldIncorrect",
+                password: "passwordIncorrect",
             });
         }).rejects.toBeInstanceOf(AuthenticateErrors);
     });
