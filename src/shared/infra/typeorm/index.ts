@@ -22,6 +22,7 @@ export default async (host = "database"): Promise<Connection> => {
                 process.env.NODE_ENV === "test"
                     ? "rentx_database_test"
                     : defaultOptions.database,
+            port: process.env.NODE_ENV === "test" ? 5444 : 5432,
         })
     );
 };

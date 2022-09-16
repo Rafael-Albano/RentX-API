@@ -15,6 +15,11 @@
         "tags": ["Categories"],
         "summary": "Create a Category",
         "description": "create a new category",
+        "security": [
+          { 
+            "bearerAuth": [] 
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -85,6 +90,11 @@
         "tags": ["Categories"],
         "summary": "Upload a new Category",
         "description": "upload a new category",
+        "security": [
+          { 
+            "bearerAuth": [] 
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -108,11 +118,91 @@
       }
     },
 
+    "v1/cars": {
+      "post": {
+        "tags": ["Cars"],
+        "summary": "Create a new car",
+        "description": "Create a new car",
+        "security": [
+          { 
+            "bearerAuth": [] 
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Car"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Car already exists!"
+          }
+        }
+      }
+    },
+
+    "/v1/cars/images/{id}": {
+      "post": {
+        "tags": ["Cars"],
+        "summary": "Upload images",
+        "description": "Upload images",
+        "security": [
+          { "bearerAuth": [] }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Car id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ], 
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "images": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+
     "/v1/specifications": {
       "post": {
         "tags": ["Specifications"],
         "summary": "Create a Specifications",
         "description": "Create a new specification",
+        "security": [
+          { 
+            "bearerAuth": [] 
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -161,7 +251,39 @@
           }
         }
       }
-    } 
+    },
+
+    "/v1/sessions": {
+      "post": {
+        "tags": ["Session"],
+        "summary": "Authentication user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "400": {
+            "description": "email or password incorrect"
+          }
+        }
+      }
+    }
   },
   "definitions": {
     "Specification": {
@@ -178,7 +300,43 @@
         "name": "Specification name sample",
         "description": "Specification description sample"
       }
+    },
+    "Car": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "daily_rate": {
+          "type": "number"
+        },
+        "license_plate": {
+          "type": "string"
+        },
+        "fine_amount": {
+          "type": "number"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "category_id": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
     }
   }
+
     
 }

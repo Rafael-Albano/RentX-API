@@ -14,6 +14,19 @@ services:
     volumes:
       - pgdata:/data/postgres
 
+  database_test:
+    image: postgres
+    container_name: rentx_database_test
+    restart: always
+    ports: 
+      - 5444:5444
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=ignite
+      - POSTGRES_DB=rentx_database_test
+    command: -p 5444
+    volumes:
+      - pgdata:/data/postgres
   app:
     build: .
     container_name: rentx_api
