@@ -12,7 +12,7 @@ const router = Router();
 router.use("/v1/categories", categoriesRoutes);
 router.use("/v1/specifications", specificationRoutes);
 router.use("/v1/users", usersRoutes);
-router.use("/v1/session", authenticateRoutes);
+router.use("/v1", authenticateRoutes);
 router.use("/v1/cars", carsRoutes);
 router.use("/v1/rentals", rentalRoutes);
 
