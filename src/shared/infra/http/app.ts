@@ -1,6 +1,6 @@
+import { config } from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
 import swaggerUi from "swagger-ui-express";
-
 import "reflect-metadata";
 import "@shared/container";
 import "express-async-errors";
@@ -11,6 +11,7 @@ import createConnection from "@shared/infra/typeorm";
 
 import swaggerFile from "../../../swagger.json";
 
+config();
 createConnection();
 const app = express();
 app.use(express.json());

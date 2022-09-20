@@ -13,6 +13,11 @@ export class UsersTokensRepository implements IUsersTokensRepository {
     constructor() {
         this.repository = getRepository(UserTokens);
     }
+    async findByRefreshToken(refresh_token: string): Promise<UserTokens> {
+        const userToken = this.repository.findOne({ where: { refresh_token } });
+
+        return userToken;
+    }
 
     async deleteById(id: string): Promise<void> {
         await this.repository.delete(id);
@@ -41,8 +46,13 @@ export class UsersTokensRepository implements IUsersTokensRepository {
             refresh_token,
         });
 
+        console.log("nem cai aqui porra !");
+        console.log(user_id);
+        console.log(expires_date);
+        console.log(refresh_token);
         this.repository.save(userToken);
 
+        console.log(userToken);
         return userToken;
     }
 }
