@@ -65,7 +65,7 @@ yarn dev
 ```
 
 ## :floppy_disk: Usando a Aplicação
-Para realização de **requisições** na aplicação, deve ser utilizado o **Insomnia** ou **Postman**, importando o [arquivo](insomnia_requests) de requisições já existente neste diretório.
+Para realização de **requisições** na aplicação, deve ser utilizado o **Insomnia** ou **Postman**,  
 Atentar-se aos parâmetros necessários no **Header**.
 
 ## :syringe: Evidência de Testes
