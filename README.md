@@ -1,92 +1,74 @@
-# Cadastro de Carro.
 
-**RF**
-- Deve ser possível cadastrar um novo carro.(OK)
+![GitHub Org's issues](https://img.shields.io/github/issues/Rafael-Albano/RentX-API)
+![GitHub Org's forks](https://img.shields.io/github/forks/Rafael-Albano/RentX-API)
+![GitHub Org's stars](https://img.shields.io/github/stars/Rafael-Albano/RentX-API)
+![GitHub Org's license](https://img.shields.io/github/license/Rafael-Albano/RentX-API)
+<p align="center">
+  <img src=assets/rentx_logo.png>
+</p>
 
-**RNF**
+## About: 
 
-**RN**
-- Não deve ser possível cadastrar um carro com uma placa já existente.(OK)
-- Ao ser cadastrado um carro já deve estar disponível por padrão.(OK)
-- *O usuário responsável pelo cadastro deve ser o administrador.(OK)
+API project built during the course taught by **RocketSeat, Ignite - NodeJS** class that simulates the routine of a car rental company.
+
+### Business Rule Diagram:
+
+<p align="center">
+  <img src=assets/1571029149847-attachment.png>
+</p>
+
+### :page_with_curl: Project Functionality: 
+
+- **Cadastro de Carro**: Deve ser possível cadastrar um novo carro.(Somente usuário autenticado e administrador).
+
+- **Listagem de Carro**: Deve ser possível listar todos os carros disponíveis.
+
+-**Cadastro de Especificação**: Deve ser possível cadastrar uma especificação para um carro.(Somente usuário autenticado e administrador).
+
+-**Cadastro de Imagem**: Deve ser possível cadastrar a imagem do carro.
+
+-**Aluguel do Carro**: Deve ser possível cadastrar um aluguel.
+
+-**Devolução de carro:** Deve ser possível realizar a devolução de um carro.
+
+-**Recuperar Senha:** Deve ser possível o usuário recuperar a senha informando o e-mail.
 
 
-# Listagem de Carro
-
-**RF**
-- Deve ser possível listar todos os carros disponíveis.(OK)
-- Deve ser possível listar todos os carros disponíveis pelo nome da categoria(category_id).(OK)
-- Deve ser possível listar todos os carros disponíveis pelo nome da marca.(OK)
-- Deve ser possível listar todos os carros disponíveis pelo namo do carro.(OK)
-
-**RN**
-- O usuário não precisa estar logado no sistema.(OK)
 
 
-# Cadastro de Especificação
+:test_tube:
 
-**RF**
-- Deve ser possível cadastrar uma especificação para um carro.
+## 💻 Installation, Dependencies, and Running the Project
+:exclamation: *IMPORTANT :*  **To run the project, you are expected to have the following tools installed on your machine:**
 
-**RN**
-- Não deve ser possível cadastrar uma especificação para um carro não cadastrado.(OK)
-- Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.(OK)
-- O usuário responsável pelo cadastro deve ser o administrador.(OK)
+* NPM ou Yarn.
+* NodeJS.
+* Docker and Docker Compose.
 
-# Cadastro de Imagem
+**1.** Clone este repositório 
+```
+git clone git@github.com:Rafael-Albano/RentX-API.git
+``` 
+**2.** Vá até o diretório raiz do projeto
+```
+cd rentx-ignite-nodejs
+``` 
+**3.** Instale as dependências necessárias
+```
+yarn 
+ou
+npm install
+```
+**4.** Execute a aplicação
+```
+yarn dev
+```
 
-**RF**
-- Deve ser possível cadastrar a imagem do carro.(OK)
-- Deve ser possível listar todos os carros.(OK)
+## :floppy_disk: Usando a Aplicação
+Para realização de **requisições** na aplicação, deve ser utilizado o **Insomnia** ou **Postman**, importando o [arquivo](insomnia_requests) de requisições já existente neste diretório.
+Atentar-se aos parâmetros necessários no **Header**.
 
-**RNF**
-- Utilizar o multer para upload dos arquivos.
+## :syringe: Evidência de Testes
+Nesta aplicação, são contemplados **Testes Unitários e Testes de Integração** utilizando o framework de testes **Jest**, visando garantir o correto funcionamento das funcionalidades e manter a aplicação de acordo com os requisitos. <br/>
 
-**RN**
-- O usuário deve poder cadastrar mais de uma imagem para o mesmo carro.(OK)
-- O usuário responsável pelo cadastro deve ser o administrador.(OK)
-
-# Aluguel de Carro.
-
-**RF**
-- Deve ser possível cadastrar um aluguel.(OK)
-
-**RN**
-- O aluguel deve ter duração mínima de 24 horas.(OK)
-- Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo usuário.(OK)
-- Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo carro.(OK)
-- O usuário deve estar logado na aplicação.(OK)
-- Ao realizar um aluguel o status deverá ser alterado para indisponível.
-
-# Devolução de carro.
-
-**RF**
-Deve ser possível realizar a devolução de um carro.
-
-**RN**
-Se o carro for devolvido com menos de 24 horas, deverá ser cobrado diária completa.
-Ao realizar a devolução, o carro deverá ser liberado para outro aluguel.
-Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel.
-Ao realizar a devolução, deverá ser calculado o total do aluguel.
-Caso o horário de devolução seja superior ao horário previsto de entrega, deverá ser cobrado multa proporcional aos dias de atraso.
-Caso haja multa, deverá ser somado ao total do aluguel.
-O usuário deve estar logado na aplicação.
-
-# Listagem de Alugueis para usuário
-
-**RF**
-Deve ser possível realizar a busca de todos os alugueis para o usuário.
-
-**RN**
-O usuário deve estar logado na aplicação.
-
-# Recuperar Senha
-
-**RF**
--Deve ser possível o usuário recuperar a senha informando o e-mail.
--O usuário deve receber um e-mail com o passo a passo para a recuperação da senha.
-- O usuário deve conseguir inserir uma senha nova.
-
-**RN**
-- O usuário precisa informar uma nova senha.
-- O link enviado para a recuperação deve expirar em 3 horas.
+- **Desenvolvido por** [**Rafael**](https://www.linkedin.com/in/rafael-luis-albano/) 🤖
