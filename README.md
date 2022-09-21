@@ -36,7 +36,6 @@ API project built during the course taught by **RocketSeat, Ignite - NodeJS** cl
 
 
 
-:test_tube:
 
 ## 💻 Installation, Dependencies, and Running the Project
 :exclamation: *IMPORTANT :*  **To run the project, you are expected to have the following tools installed on your machine:**
