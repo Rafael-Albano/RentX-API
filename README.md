@@ -23,20 +23,19 @@ API project built during the course taught by **RocketSeat, Ignite - NodeJS** cl
 
 - **Listagem de Carro**: Deve ser possível listar todos os carros disponíveis.
 
--**Cadastro de Especificação**: Deve ser possível cadastrar uma especificação para um carro.(Somente usuário autenticado e administrador).
+- **Cadastro de Especificação**: Deve ser possível cadastrar uma especificação para um carro.(Somente usuário autenticado e administrador).
 
--**Cadastro de Imagem**: Deve ser possível cadastrar a imagem do carro.
+- **Cadastro de Imagem**: Deve ser possível cadastrar a imagem do carro.
 
--**Aluguel do Carro**: Deve ser possível cadastrar um aluguel.
+- **Aluguel do Carro**: Deve ser possível cadastrar um aluguel.
 
--**Devolução de carro:** Deve ser possível realizar a devolução de um carro.
+- **Devolução de carro:** Deve ser possível realizar a devolução de um carro.
 
--**Recuperar Senha:** Deve ser possível o usuário recuperar a senha informando o e-mail.
-
-
+- **Recuperar Senha:** Deve ser possível o usuário recuperar a senha informando o e-mail.
 
 
-:test_tube:
+
+
 
 ## 💻 Installation, Dependencies, and Running the Project
 :exclamation: *IMPORTANT :*  **To run the project, you are expected to have the following tools installed on your machine:**
